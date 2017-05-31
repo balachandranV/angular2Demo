@@ -1,0 +1,46 @@
+<form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)" novalidate>
+
+  <article>
+    <div *ngIf="character">
+      <div>
+        <label for="name">Name</label>
+
+        <input type="text" id="name" class="form-control" required minlength="4" maxlength="24" name="name" [(ngModel)]="editCharacter.name"
+          #name="ngModel">
+          <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+            <div [hidden]="!name.errors.required">
+              Name is required
+            </div>
+            <div [hidden]="!name.errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
+            <div [hidden]="!name.errors.maxlength">
+              Name cannot be more than 24 characters long.
+            </div>
+          </div>
+
+      </div>
+      <div>
+        <label for="side">Side</label>
+        <input type="text" id="side" class="form-control" required minlength="4" maxlength="24" name="side" [(ngModel)]="editCharacter.side"
+          #side="ngModel">
+ <div *ngIf="side.errors && (side.dirty || side.touched)" class="alert alert-danger">
+            <div [hidden]="!side.errors.required">
+              Name is required
+            </div>
+            <div [hidden]="!side.errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
+            <div [hidden]="!side.errors.maxlength">
+              Name cannot be more than 24 characters long.
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </article>
+  <div>
+    <button type="submit" [disabled]="!regForm.valid" (click)="save()">save</button>
+    <button (click)="cancel()">cancel</button>
+  </div>
+</form>

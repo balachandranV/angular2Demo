@@ -1,0 +1,8 @@
+<article>
+  <h4 (click)="sendNotification()">My characters</h4>
+  <ul>
+    <li *ngFor = "let character of characters| async">
+      <a [routerLink]="['/characters',character.id]" href="">  {{character.id}}. {{character.name}} </a>
+    </li>
+  </ul>
+</article>

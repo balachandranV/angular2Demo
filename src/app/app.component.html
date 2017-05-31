@@ -1,0 +1,19 @@
+<div>
+  <header>
+      <h1>Story line Tracker</h1>
+      <h3>Router Demo</h3>
+      <nav>
+          <ul>
+              <li><a [routerLink]="['/characters']" href=''>characters</a></li>
+              <li><a [routerLink]="['/vehicles']" href=''>vehicles</a></li>
+              <li><a [routerLink]="['/login']" href=''>login</a></li>
+          </ul>
+      </nav>
+  </header>
+  <main>
+      <section>
+          <router-outlet></router-outlet>
+      </section>
+  </main>
+</div>
+
